@@ -34,6 +34,7 @@
       <sprite>sprites\sprArcher</sprite>
       <sprite>sprites\sprArrow</sprite>
     </sprites>
+    <sprite>sprites\spr_Player</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -88,8 +89,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
     <room>rooms\room0</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
