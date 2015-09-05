@@ -40,7 +40,7 @@ lattack = false; // whether the player is low attacking
 
 
 ///////ANIMATION////////////
-
+/*
 LwalkAnim  = sprPlayerWalkLeft
 idleAnim  = sprPlayerIdle
 LloatkAnim = sprPlayerLowAL

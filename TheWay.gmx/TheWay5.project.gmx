@@ -59,18 +59,15 @@
         <sprite>sprites\spr_kunai</sprite>
       </sprites>
     </sprites>
-    <sprites name="Player">
-      <sprite>sprites\playerWalkR</sprite>
-      <sprite>sprites\playerAttack</sprite>
-      <sprite>sprites\playerIdle</sprite>
-      <sprite>sprites\playerJump</sprite>
-    </sprites>
     <sprites name="Obstacles">
       <sprite>sprites\spr_tree_top</sprite>
       <sprite>sprites\spr_tree</sprite>
       <sprite>sprites\spr_enemy_stand</sprite>
       <sprite>sprites\sprGazebo</sprite>
     </sprites>
+    <sprite>sprites\spr_playerAnim</sprite>
+    <sprite>sprites\box</sprite>
+    <sprite>sprites\spr_explo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\farBG</background>
@@ -181,8 +178,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
     <room>rooms\room0</room>
+    <room>rooms\room1</room>
     <room>rooms\garden_prototype</room>
   </rooms>
   <help>

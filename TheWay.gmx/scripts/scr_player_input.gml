@@ -12,13 +12,16 @@ Block = keyboard_check_pressed(ord('S'))
 ////idle animation///
 if hsp=0
     {
-        sprite_index = playerIdle
+        image_index = 0;
+        image_speed = 0;
     }
 
 ////jump animation////
 if vsp>0 || vsp<0
     {
-        sprite_index = playerJump;
+        image_index = 0;
+        image_speed = 0;
+        
     }
 
 if(State = 0)
@@ -42,8 +45,13 @@ if(State = 0)
             if hsp>0 
                 {
                 ///walkrightanimation///
-                image_speed = 0.3; sprite_index = playerWalkR; 
+                image_speed = 0.25; 
                 image_xscale = 1;
+                
+                if image_index = 3
+                    {
+                    image_index = 0
+                    }
                 }
         }
         else // if at maxspeed, stay at maxspeed
@@ -52,8 +60,14 @@ if(State = 0)
             if hsp>0 
                 {
                 ///walkrightanimation///
-                image_speed = 0.3; sprite_index = playerWalkR;
+                image_speed = 0.25;
                 image_xscale = 1;
+                
+                if image_index = 3
+                    {
+                    image_index = 0
+                    }
+                    
                 }
         }
     }
@@ -66,8 +80,14 @@ if(State = 0)
             if hsp<0 
                 {
                 ///walkleftanimation///
-                image_speed = -0.3; sprite_index = playerWalkR;
+                image_speed = 0.25;
                 image_xscale = -1;
+                
+                if image_index = 3
+                    {
+                    image_index = 0
+                    }
+                    
                 }
         }
         else // if at maxspeed, stay at maxspeed
@@ -76,8 +96,14 @@ if(State = 0)
             if hsp<0 
                 {
                 ///walkleftanimation///
-                image_speed = -0.3; sprite_index = playerWalkR;
+                image_speed = 0.25;
                 image_xscale = -1;
+                
+                if image_index = 3
+                    {
+                    image_index = 0
+                    }
+                
                 }
         }
     }
@@ -89,12 +115,12 @@ if(State = 0)
                 if dir = 1 
                     {
                     //idleright//
-                    image_speed = 0; sprite_index = playerIdle
+                    image_speed = 0; image_index = 0
                     }
                 if dir = -1 
                     //idleleft//
                     {
-                    image_speed = -0; sprite_index = playerIdle
+                    image_speed = -0; image_index = 0
                     }
             }
     }

@@ -36,6 +36,8 @@ if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = 1)
     //sprite_index = sprPlayerLowAR;
     audio_play_sound(lAtkSound, 1, false)
     lattack = true;
+    image_index = 4;
+     
 }
 //player attacks right and high
 if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = 1)
@@ -44,7 +46,7 @@ if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = 1)
     //sprite_index = sprPlayerHighAR;
     audio_play_sound(hAtkSound, 1, false)
     hattack = true;
-    sprite_index = playerAttack;
+    image_index = 4;
 }
 //player attacks left and low
 if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = -1)
@@ -53,6 +55,7 @@ if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = -1)
     //sprite_index = sprPlayerLowAL;
     audio_play_sound(lAtkSound, 1, false)
     lattack = true;
+    image_index = 4;
 }
 //player attacks left and high
 if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = -1)
@@ -61,28 +64,37 @@ if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = -1)
     //sprite_index = sprPlayerHighAL;
     audio_play_sound(hAtkSound, 1, false)
     hattack = true;
-    sprite_index = playerAttack;
+    image_index = 4;
+}
+
+if (image_index >= 4)
+{
+    image_index += 1;
+    if (image_index = 7)
+    {
+        image_index = 0;
+    }
 }
 
 //player blocks right and low
 if (keyboard_check(ord('A')))/*&&(pAttacking = 1)*/&&(dir = 1)
 {
-    sprite_index = sprPlayerLowBR;
+    //sprite_index = sprPlayerLowBR;
 }
 //player blocks right and high
 if(keyboard_check(ord('D')))/*&&(pAttacking = 1)*/&&(dir = 1)
 {
-    sprite_index = sprPlayerHighBR;
+    //sprite_index = sprPlayerHighBR;
 }
 //player blocks left and low
 if (keyboard_check(ord('A')))/*&&(pAttacking = 1)*/&&(dir = 0)
 {
-    sprite_index = sprPlayerLowBL;
+    //sprite_index = sprPlayerLowBL;
 }
 //player blocks left and high
 if(keyboard_check(ord('D')))/*&&(pAttacking = 1)*/&&(dir = 0)
 {
-    sprite_index = sprPlayerHighBL;
+    //sprite_index = sprPlayerHighBL;
 }
 /*
 bool.khit = false;
