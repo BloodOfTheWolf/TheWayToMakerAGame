@@ -1,5 +1,8 @@
 closestWallID = Wall
-vsp += grav
+
+////PLAYER ANIMATIONS FOR ATTACK NEED TO BE PUT IN/////
+////PLAYER JUMP SUPERCEDED BY PLAYER WALK ANIMATION/////
+////NEED WALL JUMP ANIM, LOW ATTACK ANIM, AND ALL ////
 
 if(isSlowed)
 {
@@ -9,6 +12,122 @@ else
 {
     curSpeed = moveSpeed
 }
+
+//////////////////COMBAT
+
+//cycle through attack and block state by pressing the space bar
+if (Attack)
+{
+    State = 1;
+}
+else if (Block)
+{
+    State = 2;
+}
+else
+{
+    State = 0;
+}
+
+//player attacks right and low
+if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = 1)
+{
+    lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
+    //sprite_index = sprPlayerLowAR;
+    audio_play_sound(lAtkSound, 1, false)
+    lattack = true;
+}
+//player attacks right and high
+if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = 1)
+{
+    hAtkSound = choose(hAttack1,hAttack2,hAttack3)
+    //sprite_index = sprPlayerHighAR;
+    audio_play_sound(hAtkSound, 1, false)
+    hattack = true;
+    sprite_index = playerAttack;
+}
+//player attacks left and low
+if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = -1)
+{
+    lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
+    //sprite_index = sprPlayerLowAL;
+    audio_play_sound(lAtkSound, 1, false)
+    lattack = true;
+}
+//player attacks left and high
+if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = -1)
+{
+    hAtkSound = choose(hAttack1,hAttack2,hAttack3)
+    //sprite_index = sprPlayerHighAL;
+    audio_play_sound(hAtkSound, 1, false)
+    hattack = true;
+    sprite_index = playerAttack;
+}
+
+//player blocks right and low
+if (keyboard_check(ord('A')))/*&&(pAttacking = 1)*/&&(dir = 1)
+{
+    sprite_index = sprPlayerLowBR;
+}
+//player blocks right and high
+if(keyboard_check(ord('D')))/*&&(pAttacking = 1)*/&&(dir = 1)
+{
+    sprite_index = sprPlayerHighBR;
+}
+//player blocks left and low
+if (keyboard_check(ord('A')))/*&&(pAttacking = 1)*/&&(dir = 0)
+{
+    sprite_index = sprPlayerLowBL;
+}
+//player blocks left and high
+if(keyboard_check(ord('D')))/*&&(pAttacking = 1)*/&&(dir = 0)
+{
+    sprite_index = sprPlayerHighBL;
+}
+/*
+bool.khit = false;
+bool.ahit = false;
+
+//high block fail sword
+if (hblock != ehattack)
+{
+khit = true;
+}
+
+//mid block fail sword
+//if (mblock != emattack)
+{
+khit = true;
+}
+
+//low block fail sword
+if (lblock != elattack)
+{
+khit = true;
+}
+//arrow block fail
+if (hblock != aattack)
+{
+ahit = true;
+}
+//damage taken sword
+if(khit == true)
+{
+php -= 2;
+khit = false;
+}
+//damage taken arrow
+if(ahit == true)
+{
+php--;
+ahit = false;
+}
+//death variable set from damage
+if(php <= 0)
+{
+death = true;
+}
+*/
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -23,6 +142,12 @@ if (place_meeting(x+hsp, y, Wall))
     }
     hsp = 0
     onWall = true
+    if onWall = true && onGround = false
+    {
+    gruntSound = choose(Grunt1,Grunt2,Grunt3)
+    audio_play_sound(gruntSound, 2, false)
+    }
+    
 }
 else
 {
@@ -31,6 +156,8 @@ else
 x += hsp
 
 //vertical collision
+
+vsp += grav // player is pulled down by gravity
 if (place_meeting(x,y+vsp, Wall))
 {
     while(!place_meeting(x,y+sign(vsp), Wall))
@@ -66,28 +193,4 @@ with (Wall)
             closestWallDistance = 10000
         }
     //}
-}       
-
-//move (bens code, might need deleting. Stay tuned)
-if instance_exists(closestWallID)
-{
-    if (closestWallID != 0)
-    {
-        if x > closestWallID.x
-        {
-            dir = -1
-            hsp = dir * curSpeed
-        }
-        if x < closestWallID.x
-        {
-            dir = 1
-            hsp = dir * curSpeed
-        }
-         //move_towards_point(closestDirtID.x+64,closestDirtID.y+96,moveSpeed)   
-    }    
 }
-/*else
-{
-    dir = 0
-}
-*/    

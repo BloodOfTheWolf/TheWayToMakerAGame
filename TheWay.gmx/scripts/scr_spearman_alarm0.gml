@@ -1,0 +1,2 @@
+CanAttack = true;
+WithinRange = false;

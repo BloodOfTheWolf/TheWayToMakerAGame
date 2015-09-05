@@ -1,38 +1,23 @@
-if (enemyHP <= 0)
+image_angle = direction;
+if (onAscent = true)
 {
-    //sprite_index = deathAnim;
-    //if (image_index > the maximum)
-    //{
-        instance_destroy();
-    //}
+    move_towards_point(midpointX, midpointY, 14);
+    if (firedDirection = 1)
+    {
+        if (x > midpointX)
+        {
+            onAscent = false;
+        }
+    }
+    if (firedDirection = -1)
+    {
+        if (x < midpointX)
+        {
+            onAscent = false;
+        }
+    }
 }
 else
 {
-if (arrowReady = true) && (distance_to_object(obj_player_placeholder)>600) && (distance_to_object(obj_player_placeholder)<1000)
-{
-        instance_create(x, y, objArrow);
-        arrowReady = false;
-}
-else
-{
-    if (distance_to_object(obj_player_placeholder)<1000)
-    {
-    timer += room_speed * 1/30;
-    if (x >= obj_player_placeholder.x)
-    {
-        image_xscale = 1;
-        x += 4;
-    }
-    if (x <= obj_player_placeholder.x)
-    {
-        image_xscale = -1;
-        x -= 4;
-    }
-    }
-}
-if (timer >= 30)
-{
-    arrowReady = true;
-    timer = 0;
-}
+    move_towards_point(targetX, targetY, 16);
 }

@@ -1,12 +1,16 @@
 startY = y;
-arrowLaunch = true;
-playerX = obj_player_placeholder.x;
-if (playerX > x)
+targetY = obj_player_placeholder.y;
+startX = x;
+targetX = obj_player_placeholder.x;
+fullX = point_distance(startX, startY, targetX, targetY);
+midpointX = fullX/2 + obj_player_placeholder.x;
+midpointY = y - 200;
+onAscent = true;
+if (obj_player_placeholder.x > x)
 {
-    arrowDirection = 0;
+    firedDirection = 1;
 }
 else
 {
-    image_xscale = -1;
-    arrowDirection = 1;
+    firedDirection = -1;
 }

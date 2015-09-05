@@ -1,60 +1,119 @@
+moveUp = keyboard_check(vk_up)
+moveDown = keyboard_check(vk_down)
 moveLeft = keyboard_check(vk_left)
 moveRight = keyboard_check(vk_right)
-moveJump = keyboard_check_pressed(vk_up)
-//attackMid = keyboard_check_pressed()
-//attackHigh = 
+moveJump = keyboard_check_pressed(vk_space)
 
-if (moveJump) && (onWall) && (!onGround) && (curWallJump != 0) && (prevWallJump != dir)
-{
-        vsp = -wallSpeed
-        prevWallJump = dir
-        dir = -dir
-        hsp = dir * moveSpeed
-        curWallJump -= 1
-        afterWallJump = true
-        alarm[0] = TminusAfterWallJump // the timer on the afterWallJump. Refer to the obj_player for the alarm results
-}
-else if ((moveRight) && (!afterWallJump)) || (afterWallJump && dir = 1) // moving right
-{
-    dir = 1
-    if(hsp < curSpeed) // if not at max speed, accelerate
-    {
-        hsp += dir * accelSpeed
-    }
-    else // if at maxspeed, stay at maxspeed
-    {
-        hsp = dir * curSpeed
-    }
-}
-else if ((moveLeft) && (!afterWallJump)) || (afterWallJump && dir = -1) // moving left
-{
-    dir = -1
-    if(hsp > -curSpeed) // if not at max speed, accelerate
-    {
-        hsp += dir * accelSpeed
-    }
-    else // if at maxspeed, stay at maxspeed
-    {
-        hsp = dir * curSpeed
-    }
-}
-else if(hsp > 1 || hsp < -1)
-{
-    hsp *= decelSpeed
-}
-else
-{
-    hsp = 0
-}
+Attack = keyboard_check_pressed(ord('A'))
+Block = keyboard_check_pressed(ord('S'))
 
-/*if (vsp < -maxJumpSpeed) // if at max upward vertical speed, stay at maxspeed
+
+
+////idle animation///
+if hsp=0
+    {
+        sprite_index = playerIdle
+    }
+
+////jump animation////
+if vsp>0 || vsp<0
+    {
+        sprite_index = playerJump;
+    }
+
+if(State = 0)
 {
-    vsp = -maxJumpSpeed
-    hsp *= -1
-    dir *= -1
-}*/
-if (moveJump) && (onGround)
-{
-    vsp -= jumpSpeed
-    onGround = false
+    if (moveJump) && (onWall) && (!onGround) && (curWallJump != 0) && (prevWallJump != dir)
+    {
+            vsp = -wallSpeed
+            prevWallJump = dir
+            dir = -dir
+            hsp = dir * moveSpeed
+            curWallJump -= 1
+            afterWallJump = true
+            alarm[0] = TminusAfterWallJump // the timer on the afterWallJump. Refer to the obj_player for the alarm results
+    }
+    else if ((moveRight) && (!afterWallJump)) || (afterWallJump && dir = 1) // moving right
+    {  
+        dir = 1
+        if(hsp < curSpeed) // if not at max speed, accelerate
+        {
+            hsp += dir * accelSpeed
+            if hsp>0 
+                {
+                ///walkrightanimation///
+                image_speed = 0.3; sprite_index = playerWalkR; 
+                image_xscale = 1;
+                }
+        }
+        else // if at maxspeed, stay at maxspeed
+        {
+            hsp = dir * curSpeed
+            if hsp>0 
+                {
+                ///walkrightanimation///
+                image_speed = 0.3; sprite_index = playerWalkR;
+                image_xscale = 1;
+                }
+        }
+    }
+    else if ((moveLeft) && (!afterWallJump)) || (afterWallJump && dir = -1) // moving left
+    {
+        dir = -1
+        if(hsp > -curSpeed) // if not at max speed, accelerate
+        {
+            hsp += dir * accelSpeed
+            if hsp<0 
+                {
+                ///walkleftanimation///
+                image_speed = -0.3; sprite_index = playerWalkR;
+                image_xscale = -1;
+                }
+        }
+        else // if at maxspeed, stay at maxspeed
+        {
+            hsp = dir * curSpeed
+            if hsp<0 
+                {
+                ///walkleftanimation///
+                image_speed = -0.3; sprite_index = playerWalkR;
+                image_xscale = -1;
+                }
+        }
+    }
+    else if(hsp > 1 || hsp < -1)
+    {
+        hsp *= decelSpeed
+        if hsp = 0 
+            {
+                if dir = 1 
+                    {
+                    //idleright//
+                    image_speed = 0; sprite_index = playerIdle
+                    }
+                if dir = -1 
+                    //idleleft//
+                    {
+                    image_speed = -0; sprite_index = playerIdle
+                    }
+            }
+    }
+    else
+    {
+        hsp = 0
+    }
+    
+    /*if (vsp < -maxJumpSpeed) // if at max upward vertical speed, stay at maxspeed
+    {
+        vsp = -maxJumpSpeed
+        hsp *= -1
+        dir *= -1
+    }*/
+    if (moveJump) && (onGround)
+    {
+        jumpSound = choose(Jump1,Jump2,Jump3)
+        audio_play_sound(jumpSound, 3, false)
+        vsp -= jumpSpeed
+        onGround = false
+    }
 }

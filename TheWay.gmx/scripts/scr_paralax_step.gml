@@ -1,41 +1,20 @@
-MOVELEFT = keyboard_check(vk_left) || keyboard_check(ord("A"));
-MOVERIGHT = keyboard_check(vk_right)  || keyboard_check(ord("D"));
+background_x[0] = view_xview[0] * farBGSpeed
+background_x[1] = view_xview[0] * midBGSpeed
+background_x[2] = view_xview[0] * nearBGSpeed
 
-itsMe = object_index
+//Movement
+/*Movement = obj_player_placeholder.hsp*Speed
 
-//Spawn more BG
-if !place_meeting(x-myWidth, y, itsMe)
-    {
-    /*Child =*/ instance_create(x-myWidth, y, itsMe)
-    }
-    
-if !place_meeting(x+myWidth, y, itsMe)
-    {
-    /*Child =*/ instance_create(x+myWidth, y, itsMe)
-    }
-
-//Clean up
-if (x > room_width + sprite_width/2) || (x < -(room_width + sprite_width/2))
-    {
-    with (self)
-        {
-        instance_destroy()
-        }
-    }
-//Movement        
-if MOVELEFT
-    {
-    x-=mySpeed
-    }
+//Cycle on/off screen
+if (x > room_width + Width)
+{
+    x = -Width - Movement 
+}
+else if (x < -Width)
+{
+    x = room_width + Width - Movement 
+}
 else
-    {
-    x-=0
-    }
-if MOVERIGHT
-    {
-    x+=mySpeed
-    }
-else
-    {
-    x-=0
-    }
+{
+    x -= Movement 
+}
