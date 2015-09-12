@@ -1,3 +1,14 @@
+///////DIE//////
+
+if myHp <= 0
+    {
+    with (self)
+        {
+            instance_destroy()
+        }
+    }
+
+
 //Aggro range
 WithinRange = distance_to_object(obj_player_placeholder) < 100;
 //Attack Range

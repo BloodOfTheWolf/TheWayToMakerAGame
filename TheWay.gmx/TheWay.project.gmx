@@ -28,6 +28,14 @@
         <sound>sound\Jump3</sound>
       </sounds>
     </sounds>
+    <sound>sound\waterMusic</sound>
+    <sound>sound\swoosh1</sound>
+    <sound>sound\swoosh2</sound>
+    <sound>sound\swoosh3</sound>
+    <sound>sound\hitEnemy1</sound>
+    <sound>sound\hitEnemy2</sound>
+    <sound>sound\hitEnemy3</sound>
+    <sound>sound\hitEnemy4</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Ground Textures">
@@ -147,6 +155,7 @@
         <script>scripts\scr_swordsman_alarm0.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scr_waterMusic.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player_placeholder</object>
@@ -177,6 +186,7 @@
       <object>objects\obj_swordsman</object>
     </objects>
     <object>objects\obj_attackVolume</object>
+    <object>objects\obj_waterMusic</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

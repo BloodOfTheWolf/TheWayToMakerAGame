@@ -37,6 +37,8 @@ if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = 1)
     instance_create(x+100, y-200, obj_attackVolume)
     
     lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
+    swoosh = choose (swoosh1, swoosh2, swoosh3)
+    audio_play_sound(swoosh, 1, false)
     //sprite_index = sprPlayerLowAR;
     audio_play_sound(lAtkSound, 1, false)
     lattack = true;
@@ -52,6 +54,8 @@ if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = 1)
     instance_create(x+100, y-200, obj_attackVolume)
   
     hAtkSound = choose(hAttack1,hAttack2,hAttack3)
+    swoosh = choose (swoosh1, swoosh2, swoosh3)
+    audio_play_sound(swoosh, 1, false)
     //sprite_index = sprPlayerHighAR;
     audio_play_sound(hAtkSound, 1, false)
     hattack = true;
@@ -70,6 +74,8 @@ if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = -1)
             }
             
     lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
+    swoosh = choose (swoosh1, swoosh2, swoosh3)
+    audio_play_sound(swoosh, 1, false)
     //sprite_index = sprPlayerLowAL;
     audio_play_sound(lAtkSound, 1, false)
     lattack = true;
@@ -86,6 +92,8 @@ if(keyboard_check_pressed(ord('D'))) && hattack /*&&(pAttacking = 0)*/&&(dir = -
             image_xscale = -1;
             }
     hAtkSound = choose(hAttack1,hAttack2,hAttack3)
+    swoosh = choose (swoosh1, swoosh2, swoosh3)
+    audio_play_sound(swoosh, 1, false)
     //sprite_index = sprPlayerHighAL;
     audio_play_sound(hAtkSound, 1, false)
     image_index = 4;
