@@ -68,7 +68,7 @@
     <instance objName="obj_ground_placeholder" x="1664" y="976" name="inst_8E31BB5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="1792" y="976" name="inst_2138A081" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="1920" y="976" name="inst_25A2AFD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gazebo" x="2160" y="1008" name="inst_C1214019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="2160" y="1008" name="inst_C1214019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="32" y="976" name="inst_98DCA528" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="64" y="976" name="inst_D195106E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="96" y="976" name="inst_D4E88600" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

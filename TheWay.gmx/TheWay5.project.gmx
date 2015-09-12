@@ -11,7 +11,6 @@
         <sound>sound\hAttack1</sound>
         <sound>sound\hAttack2</sound>
         <sound>sound\hAttack3</sound>
-        <sound>sound\hAttack4</sound>
         <sound>sound\lAttack1</sound>
         <sound>sound\lAttack2</sound>
         <sound>sound\lAttack3</sound>
@@ -65,9 +64,7 @@
       <sprite>sprites\spr_enemy_stand</sprite>
       <sprite>sprites\sprGazebo</sprite>
     </sprites>
-    <sprite>sprites\spr_playerAnim</sprite>
-    <sprite>sprites\box</sprite>
-    <sprite>sprites\spr_explo</sprite>
+    <sprite>sprites\spr_Player</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\farBG</background>
