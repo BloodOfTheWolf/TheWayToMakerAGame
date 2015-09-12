@@ -10,6 +10,8 @@ CanAttack = false;
 HighAttack = false;
 MedAttack = false;
 
+myHp = 10;
+
 Wall = obj_ground_placeholder//The name of the wall object parent the player will collide with
 closestWallID = 0;
 closestWallDistance = 1000;

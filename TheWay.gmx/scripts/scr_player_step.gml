@@ -32,6 +32,10 @@ else
 //player attacks right and low
 if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = 1)
 {
+    hattack = false
+    alarm[1] = 15
+    instance_create(x+100, y-200, obj_attackVolume)
+    
     lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
     //sprite_index = sprPlayerLowAR;
     audio_play_sound(lAtkSound, 1, false)
@@ -42,6 +46,11 @@ if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = 1)
 //player attacks right and high
 if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = 1)
 {
+
+    hattack = false
+    alarm[1] = 15
+    instance_create(x+100, y-200, obj_attackVolume)
+  
     hAtkSound = choose(hAttack1,hAttack2,hAttack3)
     //sprite_index = sprPlayerHighAR;
     audio_play_sound(hAtkSound, 1, false)
@@ -51,6 +60,15 @@ if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = 1)
 //player attacks left and low
 if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = -1)
 {
+
+    lattack = false
+    alarm[1] = 15
+    instance_create(x-100, y-200, obj_attackVolume)
+        with (obj_attackVolume)
+            {
+            image_xscale = -1;
+            }
+            
     lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
     //sprite_index = sprPlayerLowAL;
     audio_play_sound(lAtkSound, 1, false)
@@ -58,13 +76,20 @@ if (keyboard_check_pressed(ord('A')))/*&&(pAttacking = 0)*/&&(dir = -1)
     image_index = 4;
 }
 //player attacks left and high
-if(keyboard_check_pressed(ord('D')))/*&&(pAttacking = 0)*/&&(dir = -1)
+if(keyboard_check_pressed(ord('D'))) && hattack /*&&(pAttacking = 0)*/&&(dir = -1)
 {
+    hattack = false
+    alarm[1] = 15
+    instance_create(x-100, y-200, obj_attackVolume)
+        with (obj_attackVolume)
+            {
+            image_xscale = -1;
+            }
     hAtkSound = choose(hAttack1,hAttack2,hAttack3)
     //sprite_index = sprPlayerHighAL;
     audio_play_sound(hAtkSound, 1, false)
-    hattack = true;
     image_index = 4;
+    
 }
 
 if (image_index >= 4)

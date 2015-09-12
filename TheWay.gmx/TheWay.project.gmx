@@ -65,6 +65,7 @@
       <sprite>sprites\sprGazebo</sprite>
     </sprites>
     <sprite>sprites\spr_Player</sprite>
+    <sprite>sprites\attackVolume</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\farBG</background>
@@ -92,6 +93,8 @@
         <script>scripts\scrEnemyCreate.gml</script>
         <script>scripts\scrEnemyStep.gml</script>
       </scripts>
+      <script>scripts\scr_attackVolumeAlarm.gml</script>
+      <script>scripts\scr_damageCode.gml</script>
     </scripts>
     <scripts name="Parallax">
       <script>scripts\scr_paralax_step.gml</script>
@@ -173,6 +176,7 @@
       <object>objects\obj_spearman_placeholder</object>
       <object>objects\obj_swordsman</object>
     </objects>
+    <object>objects\obj_attackVolume</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
