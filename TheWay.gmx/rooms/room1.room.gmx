@@ -149,8 +149,6 @@
     <instance objName="obj_ground_placeholder" x="912" y="144" name="inst_B95F58A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="944" y="144" name="inst_4B01F39D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="976" y="144" name="inst_B57997D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="352" y="464" name="inst_B06E45AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="784" y="512" name="inst_2821FDFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_placeholder" x="272" y="448" name="inst_4468D5D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

@@ -3,19 +3,38 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="9" name="datafiles"/>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Grunts">
+      <sounds name="Attack">
+        <sound>sound\hAttack1</sound>
+        <sound>sound\hAttack2</sound>
+        <sound>sound\hAttack3</sound>
+        <sound>sound\lAttack1</sound>
+        <sound>sound\lAttack2</sound>
+        <sound>sound\lAttack3</sound>
+        <sound>sound\lAttack4</sound>
+        <sound>sound\lAttack5</sound>
+      </sounds>
+      <sounds name="General">
+        <sound>sound\Grunt1</sound>
+        <sound>sound\Grunt2</sound>
+        <sound>sound\Grunt3</sound>
+      </sounds>
+      <sounds name="Jump">
+        <sound>sound\Jump1</sound>
+        <sound>sound\Jump2</sound>
+        <sound>sound\Jump3</sound>
+      </sounds>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\REDSQUARE</sprite>
-    <sprite>sprites\GROUND</sprite>
-    <sprites name="Background Textures">
-      <sprite>sprites\bg2</sprite>
-      <sprite>sprites\bg3</sprite>
-      <sprite>sprites\bg1</sprite>
-    </sprites>
     <sprites name="Ground Textures">
       <sprite>sprites\groundGrass</sprite>
-      <sprite>sprites\groundDirt</sprite>
+      <sprite>sprites\ground</sprite>
+      <sprite>sprites\spr_ground</sprite>
+      <sprite>sprites\spr_thin_ground</sprite>
     </sprites>
     <sprites name="Hitbox">
       <sprite>sprites\sprPlayerHighAL</sprite>
@@ -31,15 +50,30 @@
       <sprite>sprites\sprPlayerWalkRight</sprite>
     </sprites>
     <sprites name="Enemies">
-      <sprite>sprites\sprArcher</sprite>
-      <sprite>sprites\sprArrow</sprite>
+      <sprite>sprites\Spearman</sprite>
+      <sprite>sprites\spr_swordsman</sprite>
+      <sprites name="Twinja">
+        <sprite>sprites\spr_twinjaYin</sprite>
+        <sprite>sprites\spr_twinjaYang</sprite>
+        <sprite>sprites\spr_kunai</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Obstacles">
+      <sprite>sprites\spr_tree_top</sprite>
+      <sprite>sprites\spr_tree</sprite>
+      <sprite>sprites\spr_enemy_stand</sprite>
+      <sprite>sprites\sprGazebo</sprite>
     </sprites>
     <sprite>sprites\spr_Player</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\farBG</background>
+    <background>background\midBG</background>
+    <background>background\nearBG</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Joes Stuff">
+    <scripts name="Utility Code">
       <script>scripts\scr_Instantiate.gml</script>
       <script>scripts\scr_Listener.gml</script>
       <script>scripts\scr_Event.gml</script>
@@ -48,49 +82,102 @@
       <script>scripts\scr_Waves.gml</script>
     </scripts>
     <scripts name="Player">
+      <script>scripts\scr_viewlock.gml</script>
       <script>scripts\scr_player_input.gml</script>
       <script>scripts\scr_player_step.gml</script>
       <script>scripts\scr_player_create.gml</script>
+      <script>scripts\scr_player_combat.gml</script>
+      <scripts name="Hitbox">
+        <script>scripts\scrPlayerCreate.gml</script>
+        <script>scripts\scrEnemyCreate.gml</script>
+        <script>scripts\scrEnemyStep.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Parallax">
-      <script>scripts\scr_paralax_create2.gml</script>
-      <script>scripts\scr_paralax_create3.gml</script>
-      <script>scripts\scr_paralax_create1.gml</script>
       <script>scripts\scr_paralax_step.gml</script>
+      <script>scripts\scr_paralax_create.gml</script>
     </scripts>
-    <scripts name="Hitbox">
-      <script>scripts\scrPlayerCreate.gml</script>
-      <script>scripts\scrPlayerStep.gml</script>
-      <script>scripts\scrEnemyCreate.gml</script>
-      <script>scripts\scrEnemyStep.gml</script>
+    <scripts name="Bosses">
+      <scripts name="Twinjas">
+        <script>scripts\scr_twinjaCreateYang.gml</script>
+        <script>scripts\scr_twinjaCreateYin.gml</script>
+        <script>scripts\scr_twinjaBase.gml</script>
+        <script>scripts\scr_twinjaStepYang.gml</script>
+        <script>scripts\scr_twinjaStepYin.gml</script>
+        <script>scripts\scr_twinjaPositions.gml</script>
+      </scripts>
+      <scripts name="TMNT">
+        <script>scripts\scr_Turtle_step.gml</script>
+        <script>scripts\scr_Turtle.gml</script>
+        <script>scripts\scr_Anim_End.gml</script>
+        <script>scripts\scr_Create_Turtle.gml</script>
+      </scripts>
     </scripts>
-    <scripts name="Enemy">
-      <script>scripts\scrArcherCreate.gml</script>
-      <script>scripts\scrArcherStep.gml</script>
-      <script>scripts\scrArrowCreate.gml</script>
-      <script>scripts\scrArrowStep.gml</script>
+    <scripts name="Enemies">
+      <scripts name="Archer">
+        <script>scripts\scrArcherStep.gml</script>
+        <script>scripts\scrArrowStep.gml</script>
+        <script>scripts\scrArrowCreate.gml</script>
+        <script>scripts\scrArcherCreate.gml</script>
+        <scripts name="Bezier">
+          <script>scripts\scrGazeboStep.gml</script>
+          <script>scripts\bezier_calculate_speed.gml</script>
+          <script>scripts\bezier_destroy.gml</script>
+          <script>scripts\bezier_point_set.gml</script>
+          <script>scripts\__binomialCoef.gml</script>
+          <script>scripts\__factorial.gml</script>
+          <script>scripts\bezier_point_add.gml</script>
+          <script>scripts\bezier_point_get.gml</script>
+          <script>scripts\bezier_create.gml</script>
+          <script>scripts\bezier_calculate_pos.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Spearman">
+        <script>scripts\scr_spearman_alarm0.gml</script>
+        <script>scripts\scr_spearman_step.gml</script>
+        <script>scripts\scr_spearman_alarm1.gml</script>
+        <script>scripts\scr_spearman_create.gml</script>
+      </scripts>
+      <scripts name="Swordsman">
+        <script>scripts\scr_swordsman_step.gml</script>
+        <script>scripts\scr_swordsman_create.gml</script>
+        <script>scripts\scr_swordsman_alarm0.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_ground_placeholder</object>
     <object>objects\obj_player_placeholder</object>
     <objects name="Background">
-      <object>objects\obj_bg3</object>
-      <object>objects\obj_bg1</object>
-      <object>objects\obj_bg2</object>
+      <object>objects\obj_bg_parent</object>
     </objects>
     <objects name="Hitbox">
       <object>objects\objTestEnemy</object>
-      <object>objects\objPlayer</object>
     </objects>
-    <objects name="Enemy">
-      <object>objects\objArcher</object>
-      <object>objects\objArrow</object>
+    <object>objects\obj_locktrigger</object>
+    <objects name="Bosses">
+      <objects name="Turtleman">
+        <object>objects\obj_Turtle_Boss</object>
+        <object>objects\obj_Oar</object>
+      </objects>
+      <objects name="Twinjas">
+        <object>objects\obj_twinjaYin</object>
+        <object>objects\obj_twinjaYang</object>
+      </objects>
+    </objects>
+    <object>objects\obj_gazebo</object>
+    <objects name="Ground">
+      <object>objects\obj_ground_placeholder</object>
+      <object>objects\obj_grass</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\obj_spearman_placeholder</object>
+      <object>objects\obj_swordsman</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\room1</room>
+    <room>rooms\garden_prototype</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
