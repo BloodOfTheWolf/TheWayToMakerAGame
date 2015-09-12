@@ -12,15 +12,15 @@ Block = keyboard_check_pressed(ord('S'))
 ////idle animation///
 if hsp=0
     {
-        image_index = 0;
-        image_speed = 0;
+        sprite_index = idleAnim;
+        image_speed = 0.1;
     }
 
 ////jump animation////
 if vsp>0 || vsp<0
     {
         image_index = 0;
-        image_speed = 0;
+        image_speed = 0.25;
         
     }
 
@@ -45,7 +45,7 @@ if(State = 0)
             if hsp>0 
                 {
                 ///walkrightanimation///
-                image_speed = 0.25; 
+                sprite_index = spr_PlayerRun 
                 image_xscale = 1;
                 
                 if image_index = 3
@@ -79,7 +79,7 @@ if(State = 0)
             hsp += dir * accelSpeed
             if hsp<0 
                 {
-                ///walkleftanimation///
+                sprite_index = spr_PlayerRun
                 image_speed = 0.25;
                 image_xscale = -1;
                 

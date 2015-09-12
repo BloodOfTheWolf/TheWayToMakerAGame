@@ -72,6 +72,9 @@
       <sprite>sprites\spr_enemy_stand</sprite>
       <sprite>sprites\sprGazebo</sprite>
     </sprites>
+    <sprite>sprites\spr_PlayerRun</sprite>
+    <sprite>sprites\spr_midAttack</sprite>
+    <sprite>sprites\spr_highAttack</sprite>
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\attackVolume</sprite>
   </sprites>
