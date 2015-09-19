@@ -77,6 +77,8 @@
     <sprite>sprites\spr_highAttack</sprite>
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\attackVolume</sprite>
+    <sprite>sprites\spr_boom</sprite>
+    <sprite>sprites\spr_explosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\farBG</background>
@@ -159,6 +161,13 @@
       </scripts>
     </scripts>
     <script>scripts\scr_waterMusic.gml</script>
+    <scripts name="boom">
+      <script>scripts\scr_boomStep.gml</script>
+      <script>scripts\scr_boomCreate.gml</script>
+      <script>scripts\scr_collide.gml</script>
+      <script>scripts\scr_explodeStep.gml</script>
+      <script>scripts\scr_dealDamage.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player_placeholder</object>
@@ -190,6 +199,8 @@
     </objects>
     <object>objects\obj_attackVolume</object>
     <object>objects\obj_waterMusic</object>
+    <object>objects\obj_explosion</object>
+    <object>objects\obj_boom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

@@ -3,7 +3,7 @@
   <caption></caption>
   <width>5760</width>
   <height>1080</height>
-  <vsnap>16</vsnap>
+  <vsnap>8</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
@@ -200,8 +200,9 @@
     <instance objName="obj_ground_placeholder" x="4224" y="976" name="inst_98E861DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="4256" y="976" name="inst_33014E3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_placeholder" x="4288" y="976" name="inst_C5A7F15A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_waterMusic" x="304" y="192" name="inst_38CD7DFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_swordsman" x="2208" y="848" name="inst_AF7AEE8D" locked="0" code="" scaleX="2.5" scaleY="6.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_waterMusic" x="288" y="432" name="inst_7F1E7C33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boom" x="1648" y="960" name="inst_347C6971" locked="0" code="" scaleX="0.280000001192093" scaleY="0.25" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

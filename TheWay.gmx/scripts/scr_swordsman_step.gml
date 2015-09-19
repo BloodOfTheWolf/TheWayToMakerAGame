@@ -1,6 +1,6 @@
 ///////DIE//////
 
-if myHp <= 0
+if myHealth <= 0
     {
     with (self)
         {

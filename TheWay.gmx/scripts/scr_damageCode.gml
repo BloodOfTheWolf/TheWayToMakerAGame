@@ -3,7 +3,7 @@ audio_play_sound(hitEnemy, 1, false)
 
 with (other)
     {
-    myHp -=5;
+    myHealth -=5;
     }
     
 instance_destroy()

@@ -4,6 +4,23 @@ closestWallID = Wall
 ////PLAYER JUMP SUPERCEDED BY PLAYER WALK ANIMATION/////
 ////NEED WALL JUMP ANIM, LOW ATTACK ANIM, AND ALL ////
 
+
+////////move up///////
+if onGround && y > obj_ground_placeholder.y
+    {
+        y = obj_ground_placeholder.y;
+    }
+
+
+////////die///////
+if myHealth <=0
+    {
+    room_restart()
+    }
+
+///////////////////
+
+
 if(isSlowed)
 {
     // walking in mud/water code
