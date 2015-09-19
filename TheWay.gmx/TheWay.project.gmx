@@ -60,6 +60,10 @@
     <sprites name="Enemies">
       <sprite>sprites\Spearman</sprite>
       <sprite>sprites\spr_swordsman</sprite>
+      <sprite>sprites\sprGoombaIdle</sprite>
+      <sprite>sprites\sprGoombaRun</sprite>
+      <sprite>sprites\sprGoombaAtkHi</sprite>
+      <sprite>sprites\sprGoombaAtkLo</sprite>
       <sprites name="Twinja">
         <sprite>sprites\spr_twinjaYin</sprite>
         <sprite>sprites\spr_twinjaYang</sprite>
@@ -158,6 +162,10 @@
         <script>scripts\scr_swordsman_create.gml</script>
         <script>scripts\scr_swordsman_alarm0.gml</script>
       </scripts>
+      <scripts name="Goomba">
+        <script>scripts\scrGoombaCreate.gml</script>
+        <script>scripts\scrGoombaStep.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\scr_waterMusic.gml</script>
     <scripts name="boom">
@@ -195,6 +203,7 @@
     <objects name="Enemies">
       <object>objects\obj_spearman_placeholder</object>
       <object>objects\obj_swordsman</object>
+      <object>objects\objGoomba</object>
     </objects>
     <object>objects\obj_attackVolume</object>
     <object>objects\obj_waterMusic</object>
