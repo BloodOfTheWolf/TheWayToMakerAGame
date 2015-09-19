@@ -100,7 +100,6 @@
       <script>scripts\scr_player_input.gml</script>
       <script>scripts\scr_player_step.gml</script>
       <script>scripts\scr_player_create.gml</script>
-      <script>scripts\scr_player_combat.gml</script>
       <scripts name="Hitbox">
         <script>scripts\scrPlayerCreate.gml</script>
         <script>scripts\scrEnemyCreate.gml</script>

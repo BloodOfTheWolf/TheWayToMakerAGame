@@ -8,7 +8,7 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>10</bbox_left>
-  <bbox_right>299</bbox_right>
+  <bbox_right>391</bbox_right>
   <bbox_top>4</bbox_top>
   <bbox_bottom>269</bbox_bottom>
   <HTile>0</HTile>
@@ -20,10 +20,9 @@
   <width>300</width>
   <height>300</height>
   <frames>
-    <frame index="0">images\spr_highAttack_0.png</frame>
-    <frame index="1">images\spr_highAttack_1.png</frame>
-    <frame index="2">images\spr_highAttack_2.png</frame>
-    <frame index="3">images\spr_highAttack_3.png</frame>
-    <frame index="4">images\spr_highAttack_4.png</frame>
+    <frame index="0">images\spr_RhighAttack_0.png</frame>
+    <frame index="1">images\spr_RhighAttack_1.png</frame>
+    <frame index="2">images\spr_RhighAttack_2.png</frame>
+    <frame index="3">images\spr_RhighAttack_3.png</frame>
   </frames>
 </sprite>
