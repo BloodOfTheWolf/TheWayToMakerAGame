@@ -30,53 +30,39 @@ else if (moveJump) && (onGround)
 /// Moving Right ///
 else if ((moveRight) && (!afterWallJump)) || (afterWallJump && dir = 1)
 {  
+    sprite_index = runAnim
     dir = 1
     if(hsp < curSpeed) // if not at max speed, accelerate
     {
         hsp += dir * accelSpeed
-        if hsp > 0 && State = 0
+        if (hsp > 0) && (State = 0)
         {
-            ///walkrightanimation///
-            sprite_index = spr_PlayerRun 
+            image_speed = 0.15;
             image_xscale = 1;
-            if image_index = 3
-            {
-                image_index = 0
-            }
         }
     }
     else // if at maxspeed, stay at maxspeed
     {
         hsp = dir * curSpeed
-        if hsp > 0  && State = 0
+        if (hsp > 0)  && (State = 0)
         {
-            ///walkrightanimation///
             image_speed = 0.25;
             image_xscale = 1;
-            if image_index = 3
-            {
-                image_index = 0
-            }
         }
     }
 }
 /// Moving Left ///
 else if ((moveLeft) && (!afterWallJump)) || (afterWallJump && dir = -1)
 {
+    sprite_index = runAnim
     dir = -1
-    if(hsp > -curSpeed) // if not at max speed, accelerate
+    if(hsp > curSpeed) // if not at max speed, accelerate
     {
         hsp += dir * accelSpeed
         if (hsp < 0) && (State = 0)
         {
-            sprite_index = spr_PlayerRun
-            image_speed = 0.25;
+            image_speed = 0.15;
             image_xscale = -1;
-            
-            if image_index = 3
-            {
-                image_index = 0
-            }
         }
     }
     else // if at maxspeed, stay at maxspeed
@@ -84,14 +70,8 @@ else if ((moveLeft) && (!afterWallJump)) || (afterWallJump && dir = -1)
         hsp = dir * curSpeed
         if (hsp < 0) && (State = 0)
         {
-            ///walkleftanimation///
             image_speed = 0.25;
             image_xscale = -1;
-            
-            if image_index = 3
-            {
-                image_index = 0
-            }
         }
     }
 }

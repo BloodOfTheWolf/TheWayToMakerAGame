@@ -14,9 +14,9 @@ if onGround && y > obj_ground_placeholder.y
 
 ////////die///////
 if myHealth <=0
-    {
+{
     room_restart()
-    }
+}
 
 ///////////////////
 
@@ -26,18 +26,17 @@ if(isSlowed)
     // walking in mud/water code
 }
 else
-{
-    curSpeed = moveSpeed
-}
+    {curSpeed = moveSpeed}
 
 //////////////////COMBAT//////////////////
 //player attacks right and low
 if (LoAtk) && (dir = 1) && (!State = 1)
 {
+    audio_stop_all()
     hattack = false
     lattack = true
-    alarm[1] = 15
-    instance_create(x+100, y-200, obj_attackVolume)
+    alarm[1] = 10
+    hitbox = instance_create(x+100, y-150, obj_LatkVolume)
     lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
     swoosh = choose (swoosh1, swoosh2, swoosh3)
     audio_play_sound(swoosh, 1, false)
@@ -49,10 +48,11 @@ if (LoAtk) && (dir = 1) && (!State = 1)
 //player attacks right and high
 else if(HiAtk ) && (dir = 1) && (!State = 1)
 {
+    audio_stop_all()
     lattack = false
     hattack = true
     alarm[1] = 10
-    instance_create(x+100, y-200, obj_attackVolume)
+    hitbox = instance_create(x+100, y-200, obj_HatkVolume)
     hAtkSound = choose(hAttack1,hAttack2,hAttack3)
     swoosh = choose (swoosh1, swoosh2, swoosh3)
     audio_play_sound(swoosh, 1, false)
@@ -64,12 +64,12 @@ else if(HiAtk ) && (dir = 1) && (!State = 1)
 //player attacks left and low
 else if (LoAtk) && (dir = -1) && (!State = 1)
 {
-
+    audio_stop_all()
     hattack = false
     lattack = true
     alarm[1] = 10
-    attack = instance_create(x-100, y-200, obj_attackVolume)
-    attack = image_xscale = -1;
+    hitbox = instance_create(x-100, y-150, obj_LatkVolume)
+    hitbox.image_xscale = -1;
     lAtkSound = choose(lAttack1,lAttack2,lAttack3, lAttack4, lAttack5)
     swoosh = choose (swoosh1, swoosh2, swoosh3)
     audio_play_sound(swoosh, 1, false)
@@ -79,13 +79,14 @@ else if (LoAtk) && (dir = -1) && (!State = 1)
     State = 1
 }
 //player attacks left and high
-else if(HiAtk ) && (dir = -1) && (!State = 1)
+else if(HiAtk) && (dir = -1) && (!State = 1)
 {
+    audio_stop_all()
     lattack = false
     hattack = true
     alarm[1] = 10
-    attack = instance_create(x-100, y-200, obj_attackVolume)
-    attack = image_xscale = -1;
+    hitbox = instance_create(x-100, y-200, obj_HatkVolume)
+    hitbox.image_xscale = -1;
     hAtkSound = choose(hAttack1,hAttack2,hAttack3)
     swoosh = choose (swoosh1, swoosh2, swoosh3)
     audio_play_sound(swoosh, 1, false)
@@ -105,6 +106,7 @@ if (lattack)
     {
         lattack = false
         State = 0
+        alarm[0] = 0
     }
 }
 //low attack animation
@@ -115,13 +117,14 @@ else if(hattack)
     {
         hattack = false
         State = 0
+        alarm[0] = 0
     }
 }
 else if(State != 0)
     {State = 0}
 
 ////idle animation///
-if (State = 0) && (onGround)
+if (State = 0) && (onGround) && hsp = 0
 {
     sprite_index = idleAnim;
     image_speed = 0.25;
@@ -187,13 +190,13 @@ death = true;
 
 if (place_meeting(x+hsp, y, Wall))
 {
+    hsp = 0
+    onWall = true
     while(!place_meeting(x+sign(hsp), y, Wall))
     {
         x += sign(hsp)
     }
-        hsp = 0
-        onWall = true
-        if onWall = true && onGround = false
+    if onWall = true && onGround = false
     {
         gruntSound = choose(Grunt1,Grunt2,Grunt3)
         audio_play_sound(gruntSound, 2, false)

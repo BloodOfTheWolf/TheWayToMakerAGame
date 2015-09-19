@@ -5,6 +5,3 @@ global.php = 3;
 pAttacking = 0;
 //determines whether the player is facing right(1) or left(0)
 playerFacing = 1;
-//is the player attacking high or low?
-hattack = false;
-lattack = false;

@@ -80,7 +80,8 @@
     <sprite>sprites\spr_midAttack</sprite>
     <sprite>sprites\spr_highAttack</sprite>
     <sprite>sprites\spr_Player</sprite>
-    <sprite>sprites\attackVolume</sprite>
+    <sprite>sprites\spr_LattackVolume</sprite>
+    <sprite>sprites\spr_HattackVolume</sprite>
     <sprite>sprites\spr_boom</sprite>
     <sprite>sprites\spr_explosion</sprite>
   </sprites>
@@ -205,7 +206,8 @@
       <object>objects\obj_swordsman</object>
       <object>objects\objGoomba</object>
     </objects>
-    <object>objects\obj_attackVolume</object>
+    <object>objects\obj_HatkVolume</object>
+    <object>objects\obj_LatkVolume</object>
     <object>objects\obj_waterMusic</object>
     <object>objects\obj_explosion</object>
     <object>objects\obj_boom</object>
